@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="19529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="19519"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="Siri" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="poE-oG-6hq"/>
+                        <viewControllerLayoutGuide type="bottom" id="8Q3-jQ-J2T"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="UPG-um-KJx">
+                                <rect key="frame" x="16" y="0.0" width="343" height="567"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NDn-qg-ujr">
+                                        <rect key="frame" x="0.0" y="0.0" width="343" height="189"/>
+                                        <state key="normal" title="Request"/>
+                                        <connections>
+                                            <action selector="requestBtn:" destination="BYZ-38-t0r" eventType="touchUpInside" id="ot9-nJ-AAX"/>
+                                        </connections>
+                                    </button>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="qoA-Nt-jCr">
+                                        <rect key="frame" x="0.0" y="189" width="343" height="189"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="15"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Answer" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6dY-yC-ksf">
+                                        <rect key="frame" x="0.0" y="378" width="343" height="189"/>
+                                        <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Viz-Zm-Xe4">
+                                <rect key="frame" x="171" y="577" width="33" height="30"/>
+                                <state key="normal" title="Chat"/>
+                                <connections>
+                                    <segue destination="HdA-Z7-eSO" kind="show" id="cEu-PE-mHN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Viz-Zm-Xe4" firstAttribute="top" secondItem="6dY-yC-ksf" secondAttribute="bottom" constant="10" id="OQn-CW-88k"/>
+                            <constraint firstItem="Viz-Zm-Xe4" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="YIm-t7-cc9"/>
+                            <constraint firstItem="UPG-um-KJx" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="fQ7-qF-IMD"/>
+                            <constraint firstItem="UPG-um-KJx" firstAttribute="top" secondItem="poE-oG-6hq" secondAttribute="bottom" id="n9K-gX-Xuk"/>
+                            <constraint firstItem="8Q3-jQ-J2T" firstAttribute="top" secondItem="UPG-um-KJx" secondAttribute="bottom" constant="100" id="wa2-tR-E2o"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="UPG-um-KJx" secondAttribute="trailing" id="z7I-fA-bcx"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="answerLbl" destination="6dY-yC-ksf" id="4oF-Iq-4mX"/>
+                        <outlet property="textField" destination="qoA-Nt-jCr" id="cs6-1V-FB8"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-214" y="30"/>
+        </scene>
+        <!--Messages View Controler-->
+        <scene sceneID="S9B-vZ-Hwa">
+            <objects>
+                <viewController id="HdA-Z7-eSO" customClass="MessagesViewControler" customModule="Siri" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="5LV-cy-3Qh"/>
+                        <viewControllerLayoutGuide type="bottom" id="OEX-I9-GOl"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="GEt-0i-lX5">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="iM7-sz-Ak4" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="591" y="31"/>
+        </scene>
+    </scenes>
+</document>
